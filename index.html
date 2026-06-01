@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-950 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrashMinesWin - Live Matrix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { premiumGold: '#f59e0b', premiumGreen: '#10b981' }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '808494358652018');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=808494358652018&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body class="flex flex-col min-h-screen justify-between p-5 max-w-md mx-auto font-sans">
+
+    <header class="text-center mt-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-400 mb-4 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-premiumGreen animate-pulse"></span>
+            SYSTEM ONLINE: SECURE NODE
+        </div>
+        <h1 class="text-3xl font-black tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent uppercase">
+            CrashMinesWin
+        </h1>
+        <p class="text-sm text-slate-400 mt-2">High-Volume Predictive Routing Engine</p>
+    </header>
+
+    <main class="my-auto py-8">
+        <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-800/80 shadow-2xl backdrop-blur-md">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
+                <span class="text-xs font-mono text-slate-500">ENGINE_LOGS // STATUS</span>
+                <span id="ticker-badge" class="text-[10px] font-bold px-2 py-0.5 rounded bg-premiumGold/10 text-premiumGold uppercase tracking-wider">
+                    Scanning
+                </span>
+            </div>
+            
+            <div id="terminal" class="font-mono text-xs space-y-3 min-h-[140px] transition-all duration-300">
+                <!-- JavaScript handles the text insertion here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="mb-8 space-y-4">
+        <div class="text-center">
+            <p class="text-xs text-slate-500">🔒 Secure Connection to Telegram Gateway</p>
+        </div>
+        
+        <button onclick="handleConversion()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold py-4 px-6 rounded-xl shadow-[0_0_15px_rgba(245,158,11,0.3)] active:scale-[0.98] transition-transform text-center block text-base tracking-wide uppercase">
+            Activate System & Join Now
+        </button>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 🔗 TELEGRAM REDIRECT URL
+        // ==========================================
+        const TELEGRAM_BOT_URL = "https://t.me/+3KiO2QaEg8tjNzI0"; 
+        
+        const logs = [
+            { text: "📡 Connecting to global tracking matrix...", delay: 300 },
+            { text: "🧬 Syncing verification databases...", delay: 1400 },
+            { text: "📊 Target zones calibrated at 98.4% accuracy.", delay: 2600 },
+            { text: "🟢 READY: Waiting for user activation.", delay: 3800 }
+        ];
+
+        const terminalEl = document.getElementById("terminal");
+        const badgeEl = document.getElementById("ticker-badge");
+
+        // Terminal animation
+        logs.forEach((log) => {
+            setTimeout(() => {
+                const row = document.createElement("p");
+                row.className = "text-slate-300 border-l-2 border-slate-700 pl-3";
+                row.innerHTML = `<span class="text-slate-500">></span> ${log.text}`;
+                terminalEl.appendChild(row);
+                
+                if (log.text.includes("READY")) {
+                    badgeEl.innerText = "Verified";
+                    badgeEl.className = "text-[10px] font-bold px-2 py-0.5 rounded bg-premiumGreen/10 text-premiumGreen uppercase tracking-wider shadow-[0_0_8px_rgba(16,185,129,0.4)]";
+                }
+            }, log.delay);
+        });
+
+        // 🎯 THE CONVERSION TRACKER
+        function handleConversion() {
+            // 1. Fire the Meta Lead Event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+
+            // 2. Redirect to your Telegram Gateway after a split-second to ensure Pixel fires
+            setTimeout(() => {
+                window.location.href = TELEGRAM_BOT_URL;
+            }, 300); 
+        }
+    </script>
+</body>
+</html>
