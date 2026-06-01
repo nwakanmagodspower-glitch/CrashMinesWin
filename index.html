@@ -35,6 +35,7 @@
 </head>
 <body class="flex flex-col min-h-screen justify-between p-5 max-w-md mx-auto font-sans">
 
+    <!-- Header -->
     <header class="text-center mt-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-400 mb-4 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-premiumGreen animate-pulse"></span>
@@ -46,7 +47,9 @@
         <p class="text-sm text-slate-400 mt-2">High-Volume Predictive Routing Engine</p>
     </header>
 
-    <main class="my-auto py-8">
+    <main class="my-auto py-6 space-y-6">
+        
+        <!-- Simulated Terminal Box -->
         <div class="bg-slate-900/90 rounded-xl p-5 border border-slate-800/80 shadow-2xl backdrop-blur-md">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-4">
                 <span class="text-xs font-mono text-slate-500">ENGINE_LOGS // STATUS</span>
@@ -54,34 +57,59 @@
                     Scanning
                 </span>
             </div>
-            
-            <div id="terminal" class="font-mono text-xs space-y-3 min-h-[140px] transition-all duration-300">
+            <div id="terminal" class="font-mono text-xs space-y-3 min-h-[120px] transition-all duration-300">
                 <!-- JavaScript handles the text insertion here -->
             </div>
         </div>
+
+        <!-- NEW: Social Proof / Won Signals Section -->
+        <div class="space-y-3">
+            <h3 class="text-[11px] font-bold text-slate-500 uppercase tracking-wider pl-1">Live Feed // Verified Targets</h3>
+            
+            <div class="flex items-center justify-between bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700/50 p-3 rounded-lg shadow-sm">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl">🚀</span>
+                    <div>
+                        <p class="text-sm font-bold text-white">Crash: 12.50x</p>
+                        <p class="text-[10px] text-slate-400">Cashout Executed</p>
+                    </div>
+                </div>
+                <span class="text-[10px] font-bold text-premiumGreen bg-premiumGreen/10 px-2 py-1 rounded">✅ WON</span>
+            </div>
+
+            <div class="flex items-center justify-between bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700/50 p-3 rounded-lg shadow-sm">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl">💣</span>
+                    <div>
+                        <p class="text-sm font-bold text-white">Mines: 5 Safes</p>
+                        <p class="text-[10px] text-slate-400">Target Cleared</p>
+                    </div>
+                </div>
+                <span class="text-[10px] font-bold text-premiumGreen bg-premiumGreen/10 px-2 py-1 rounded">✅ WON</span>
+            </div>
+        </div>
+
     </main>
 
+    <!-- Footer & CTA -->
     <footer class="mb-8 space-y-4">
         <div class="text-center">
             <p class="text-xs text-slate-500">🔒 Secure Connection to Telegram Gateway</p>
         </div>
-        
         <button onclick="handleConversion()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold py-4 px-6 rounded-xl shadow-[0_0_15px_rgba(245,158,11,0.3)] active:scale-[0.98] transition-transform text-center block text-base tracking-wide uppercase">
             Activate System & Join Now
         </button>
     </footer>
 
     <script>
-        // ==========================================
         // 🔗 TELEGRAM REDIRECT URL
-        // ==========================================
         const TELEGRAM_BOT_URL = "https://t.me/+3KiO2QaEg8tjNzI0"; 
         
         const logs = [
             { text: "📡 Connecting to global tracking matrix...", delay: 300 },
-            { text: "🧬 Syncing verification databases...", delay: 1400 },
-            { text: "📊 Target zones calibrated at 98.4% accuracy.", delay: 2600 },
-            { text: "🟢 READY: Waiting for user activation.", delay: 3800 }
+            { text: "🧬 Syncing verification databases...", delay: 1200 },
+            { text: "📊 Calibrating next entry parameters...", delay: 2200 },
+            { text: "🟢 READY: Awaiting user activation.", delay: 3200 }
         ];
 
         const terminalEl = document.getElementById("terminal");
@@ -96,7 +124,7 @@
                 terminalEl.appendChild(row);
                 
                 if (log.text.includes("READY")) {
-                    badgeEl.innerText = "Verified";
+                    badgeEl.innerText = "Online";
                     badgeEl.className = "text-[10px] font-bold px-2 py-0.5 rounded bg-premiumGreen/10 text-premiumGreen uppercase tracking-wider shadow-[0_0_8px_rgba(16,185,129,0.4)]";
                 }
             }, log.delay);
@@ -104,12 +132,9 @@
 
         // 🎯 THE CONVERSION TRACKER
         function handleConversion() {
-            // 1. Fire the Meta Lead Event
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
-
-            // 2. Redirect to your Telegram Gateway after a split-second to ensure Pixel fires
             setTimeout(() => {
                 window.location.href = TELEGRAM_BOT_URL;
             }, 300); 
